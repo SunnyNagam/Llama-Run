@@ -311,18 +311,18 @@ public class Main extends Applet implements Runnable, KeyListener{
 				lam.Gup = true;
 				timeAct = System.nanoTime();
 			}
-			else if(key == KeyEvent.VK_A){
+			if(key == KeyEvent.VK_A){
 				lam.Gleft = true;
 			}
-			else if(key == KeyEvent.VK_D)
+			if(key == KeyEvent.VK_D)
 				lam.Gright = true;
-			else if(key == KeyEvent.VK_S)
+			if(key == KeyEvent.VK_S)
 				lam.Gdown = true;
-			else if(key == KeyEvent.VK_ESCAPE){
+			if(key == KeyEvent.VK_ESCAPE){
 				game = false;
 				pause = true;
 			}
-			else if(key == KeyEvent.VK_ENTER && lam.lazMode){
+			if(key == KeyEvent.VK_ENTER && lam.lazMode){
 				if((System.nanoTime()-lam.shootTimer)/1000000000>=3){
 					lam.lazs.add(new Lazer(lam.x,lam.y));
 					lam.shootTimer = System.nanoTime();
@@ -335,9 +335,9 @@ public class Main extends Applet implements Runnable, KeyListener{
 				mainMenu = true;
 				resetGame();
 			}
-			else if(key == KeyEvent.VK_ESCAPE)
+			if(key == KeyEvent.VK_ESCAPE)
 				System.exit(0);
-			else if(key == KeyEvent.VK_S){
+			if(key == KeyEvent.VK_S){
 				deathScreen = false;
 				store = true;
 			}
@@ -347,14 +347,14 @@ public class Main extends Applet implements Runnable, KeyListener{
 				pause = false;
 				game = true;
 			}
-			else if(key == KeyEvent.VK_M){
+			if(key == KeyEvent.VK_M){
 				if(musicMute)
 					clips[0].play();
 				else
 					clips[0].stop();
 				musicMute = !musicMute;
 			}
-			else if(key == KeyEvent.VK_S){
+			if(key == KeyEvent.VK_S){
 				sfxMute = !sfxMute;
 			}
 		}
@@ -364,16 +364,16 @@ public class Main extends Applet implements Runnable, KeyListener{
 				mainMenu = true;
 				resetGame();
 			}
-			else if(key == KeyEvent.VK_S && storeMarker<items.length-1){
+			if(key == KeyEvent.VK_S && storeMarker<items.length-1){
 				storeMarker++;
 			}
-			else if(key == KeyEvent.VK_W && storeMarker>0){
+			if(key == KeyEvent.VK_W && storeMarker>0){
 				storeMarker--;
 			}
-			else if( key == KeyEvent.VK_E && items[storeMarker].costume && items[storeMarker].bought){
+			if( key == KeyEvent.VK_E && items[storeMarker].costume && items[storeMarker].bought){
 				lam.equipCos = items[storeMarker].cosInx;
 			}
-			else if(key == KeyEvent.VK_ENTER){
+			if(key == KeyEvent.VK_ENTER){
 				if(!items[storeMarker].bought && lam.totalBean >= items[storeMarker].price){
 					items[storeMarker].bought = true;
 					if(storeMarker == 0)
@@ -440,11 +440,11 @@ public class Main extends Applet implements Runnable, KeyListener{
 			int key = e.getKeyCode();
 			if(key == KeyEvent.VK_SPACE)
 				lam.Gup = false;
-			else if(key == KeyEvent.VK_A)
+			if(key == KeyEvent.VK_A)
 				lam.Gleft = false;
-			else if(key == KeyEvent.VK_D)
+			if(key == KeyEvent.VK_D)
 				lam.Gright = false;
-			else if(key == KeyEvent.VK_S)
+			if(key == KeyEvent.VK_S)
 				lam.Gdown = false;
 		}
 	}
